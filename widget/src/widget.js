@@ -95,6 +95,37 @@
         transition: opacity 0.22s ease, transform 0.22s ease;
       }
 
+      @media (max-width: 480px) {
+        #chat-bubble {
+          bottom: max(16px, env(safe-area-inset-bottom));
+          ${hPos.replace('20px', '16px')}
+        }
+
+        #chat-panel {
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          width: 100%;
+          height: 100%;
+          height: 100dvh;
+          border-radius: 0;
+          transform: translateY(100%);
+        }
+
+        #chat-panel.open {
+          transform: translateY(0);
+        }
+
+        #chat-header {
+          padding-top: max(14px, env(safe-area-inset-top));
+        }
+
+        #chat-footer {
+          padding-bottom: max(10px, env(safe-area-inset-bottom));
+        }
+      }
+
       #chat-panel.open {
         opacity: 1;
         transform: translateY(0) scale(1);
